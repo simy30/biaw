@@ -35,14 +35,14 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.use(express.json());
-app.get('/create-checkout-session', (req, res) => { res.status(200).send('Test: Hello World!'); });
+//app.get('/create-checkout-session', (req, res) => { res.status(200).send('Test: Hello World!'); });
 
 
 
 
 
 // Endpoint to create a checkout session
-/*app.post('/create-checkout-session', async (req, res) => {
+app.post('/create-checkout-session', async (req, res) => {
     try {
     res.json({ message: 'Endpoint is working!' });
         const { seats, clientReferenceId, priceId } = req.body;
@@ -67,7 +67,7 @@ app.get('/create-checkout-session', (req, res) => { res.status(200).send('Test: 
         console.error('Error creating checkout session:', error.message);
         res.status(500).json({ error: 'Internal Server Error' });
     }
-});*/
+});
 
 // Start server
 app.listen(PORT, () => {
